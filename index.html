@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random DNA Generator</title>
+    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-dark bg-dark mb-3">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">DNA Sequence</a>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="bg-light p-5 rounded">
+            <h1>Random DNA Sequence Generator</h1>
+
+            <p><strong>Enter values and click button.</strong></p>
+
+            <form>Size of DNA in base pair: <input size="6" name="size" value="1000">
+                <p>GC content (between 0 and 1):<input size="6" name="GC" value="0.50"></p>
+
+                <input type="button" class="btn btn-outline-secondary" name="reset" value="Generate"
+                    onclick="makeDNA(this.form)">
+
+                <p>Sequence:</p>
+
+                <div class="text-wrap">
+                    <textarea name="sequence" rows="12" cols="100" id="sequence"></textarea>
+                    <div id="copyToClipboard-a" class="clipboard icon"><span id="textcopied">Copie text</span></div>
+                </div>
+
+                <br>
+
+            </form>
+
+           <!-- <h1>Mutated DNA Sequence</h1>
+            <h1>Mixed DNA Sequence</h1>-->
+
+            <h1>IUPAC Degeneracies</h1>
+            <br>
+            <p>Nucleotide code</p>
+            <table class="table table-hover">
+                <thead>
+                    <tr ALIGN="CENTER">
+                        <TH>Base</TH>
+                        <TH>Name</TH>
+                        <TH>Bases Represented</TH>
+                        <TH>Complementary Base</TH>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ALIGN="CENTER">
+                        <TH>A</TH>
+                        <TD>Adenine</TD>
+                        <TD>A</TD>
+                        <TD>T</TD>
+                    </tr>
+                    <tr ALIGN="CENTER">
+                        <TH>T</TH>
+                        <TD>Thymidine</TD>
+                        <TD>T</TD>
+                        <TD>A</TD>
+                    </tr>
+                    <tr ALIGN="CENTER">
+                        <TH>U</TH>
+                        <TD>Uridine(RNA only)</TD>
+                        <TD>U</TD>
+                        <TD>A</TD>
+                    </tr>
+                    <tr ALIGN="CENTER">
+                        <TH>G</TH>
+                        <TD>Guanidine</TD>
+                        <TD>G</TD>
+                        <TD>C</TD>
+                    </tr>
+                    <tr ALIGN="CENTER">
+                        <TH>C</TH>
+                        <TD>Cytidine</TD>
+                        <TD>C</TD>
+                        <TD>G</TD>
+                    </tr>
+                    <tr ALIGN="CENTER">
+                        <TH>Y</TH>
+                        <TD>pYrimidine</TD>
+                        <TD>C T</TD>
+                        <TD>R</TD>
+                    </tr>
+                    <tr ALIGN="CENTER">
+                        <TH>R</TH>
+                        <TD>puRine</TD>
+                        <TD>A G</TD>
+                        <TD>Y</TD>
+                    </tr>
+                    <tr ALIGN="CENTER">
+                        <TH>S</TH>
+                        <TD>Strong(3Hbonds)</TD>
+                        <TD>G C</TD>
+                        <TD>S*</TD>
+                    </tr>
+                    <tr ALIGN="CENTER">
+                        <TH>W</TH>
+                        <TD>Weak(2Hbonds)</TD>
+                        <TD>A T</TD>
+                        <TD>W*</TD>
+                    </tr>
+                    <tr ALIGN="CENTER">
+                        <TH>K</TH>
+                        <TD>Keto</TD>
+                        <TD>T/U G</TD>
+                        <TD>M</TD>
+                    </tr>
+                    <tr ALIGN="CENTER">
+                        <TH>M</TH>
+                        <TD>aMino</TD>
+                        <TD>A C</TD>
+                        <TD>K</TD>
+                    </tr>
+                    <tr ALIGN="CENTER">
+                        <TH>B</TH>
+                        <TD>not A</TD>
+                        <TD>C G T</TD>
+                        <TD>V</TD>
+                    </tr>
+                    <tr ALIGN="CENTER">
+                        <TH>D</TH>
+                        <TD>not C</TD>
+                        <TD>A G T</TD>
+                        <TD>H</TD>
+                    </tr>
+                    <tr ALIGN="CENTER">
+                        <TH>H</TH>
+                        <TD>not G</TD>
+                        <TD>A C T</TD>
+                        <TD>D</TD>
+                    </tr>
+                    <tr ALIGN="CENTER">
+                        <TH>V</TH>
+                        <TD>not T/U</TD>
+                        <TD>A C G</TD>
+                        <TD>B</TD>
+                    </tr>
+                    <tr ALIGN="CENTER">
+                        <TH>N</TH>
+                        <TD>Unknown</TD>
+                        <TD>A C G T</TD>
+                        <TD>N</TD>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+    </div>
+
+    <script src="assets/app.js"></script>
+</body>
+
+</html>
